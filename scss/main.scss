@@ -1,0 +1,167 @@
+@mixin mobile {
+	@media (max-width: 768px) {
+		@content;
+	}
+}
+@mixin laptop {
+	@media (min-width: 769px) {
+		@content;
+	}
+}
+@mixin mobile-sm {
+	@media (max-width: 500px) {
+		@content;
+	}
+}
+@function adaptive-sz($value, $base: 1920) {
+	@return $value/$base * 100vw;
+}
+@font-face {
+	font-display: swap;
+	font-family: "Montserrat";
+	font-style: normal;
+	font-weight: 600;
+	src: url("../fonts/montserrat-v26-cyrillic_latin-600.woff2") format("woff2");
+}
+@font-face {
+	font-display: swap;
+	font-family: "Montserrat";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/montserrat-v26-cyrillic_latin-700.woff2") format("woff2");
+}
+header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	h1 {
+		@include mobile {
+			font-size: 32px;
+		}
+		color: #000;
+		text-align: center;
+		font-family: Montserrat;
+		font-size: adaptive-sz(90);
+		font-style: normal;
+		font-weight: 700;
+		line-height: 130%; /* 59.8px */
+	}
+	.header-p {
+		color: #000;
+		text-align: center;
+		font-family: Montserrat;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%; /* 24px */
+	}
+	.adrres-p {
+		color: #000;
+		font-family: Montserrat;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%; /* 24px */
+	}
+	.aaders-p {
+		color: #275bec;
+		font-family: Montserrat;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		text-decoration: none;
+	}
+}
+
+footer {
+	width: 100%;
+	background: #1e4776;
+}
+.footer-yuriy {
+	color: #7e9ec9;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 130%; /* 36.4px */
+	@include mobile-sm {
+		text-align: center;
+	}
+	@include mobile {
+		font-size: 18px;
+		text-align: center;
+	}
+	@include laptop {
+		font-size: 28px;
+	}
+}
+.footer-html {
+	color: #7e9ec9;
+	font-family: Montserrat;
+
+	font-style: normal;
+	font-weight: 600;
+	line-height: 130%;
+	@include mobile-sm {
+		font-size: 14px;
+		text-align: center;
+	}
+	@include mobile {
+		font-size: 14px;
+		text-align: center;
+	}
+	@include laptop {
+		font-size: 16px;
+	}
+}
+.footer-moi {
+	white-space: nowrap;
+	color: #fff;
+	font-size: adaptive-sz(29);
+	font-style: normal;
+	font-weight: 600;
+	line-height: 130%; /* 20.8px */
+	@include mobile {
+		font-size: 25px;
+		text-align: center;
+	}
+	@include mobile-sm {
+		font-size: adaptive-sz(95);
+		text-align: center;
+	}
+	@include laptop {
+		font-size: 16px;
+	}
+}
+.block-icons {
+	max-width: 300px;
+	@include mobile {
+		max-width: 100%;
+	}
+}
+
+.footer-napeshi {
+	color: #7e9ec9;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 130%; /* 20.8px */
+	@include mobile-sm {
+		font-size: 14px;
+		text-align: center;
+	}
+	@include mobile {
+		font-size: 14px;
+		text-align: center;
+	}
+	@include laptop {
+		font-size: 16px;
+	}
+}
+
+.naglavnuyu{
+	text-decoration: none;
+	color: #275bec;
+}
+
+
